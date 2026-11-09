@@ -1,0 +1,75 @@
+site_name: Agente-Tegma — Documentação de Segurança
+site_description: Fluxos, arquitetura e camadas de segurança do atendimento de TI da Tegma no Microsoft Teams, para avaliação pela equipe de segurança da Tegma
+site_author: iK — Engenharia
+copyright: Documentação técnica entregue à Tegma · iK
+
+theme:
+  name: material
+  custom_dir: overrides
+  language: pt-BR
+  palette:
+    - scheme: default
+      primary: deep orange
+      accent: deep purple
+      toggle:
+        icon: material/brightness-7
+        name: Modo escuro
+    - scheme: slate
+      primary: deep orange
+      accent: deep purple
+      toggle:
+        icon: material/brightness-4
+        name: Modo claro
+  font:
+    text: Roboto
+    code: Roboto Mono
+  icon:
+    logo: material/shield-check-outline
+  features:
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.footer
+    - toc.follow
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+
+plugins:
+  - search:
+      lang: pt
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.details
+  - admonition
+  - tables
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+nav:
+  - Apresentação: index.md
+  - Escopo do Sistema: escopo.md
+  - Arquitetura e Topologia: arquitetura.md
+  - Fluxos:
+      - Fluxo de uma Mensagem: fluxo-mensagem.md
+      - Fluxos de Atendimento: fluxos-atendimento.md
+  - Segurança:
+      - Identidade e Autorização: identidade.md
+      - Agente de IA e Guardrails: agente-ia.md
+      - Integrações Externas: integracoes.md
+      - Superfície de Ataque: superficie-ataque.md
+      - Camadas de Segurança: camadas-seguranca.md
+      - Dados, Privacidade e Auditoria: dados-privacidade.md
+  - Operação Segura: operacao.md
+  - Guia para Avaliadores: guia-avaliadores.md
